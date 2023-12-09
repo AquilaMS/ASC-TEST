@@ -14,6 +14,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<TokenService>();
+builder.Services.AddTransient<PasswordService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
