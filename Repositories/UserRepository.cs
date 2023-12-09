@@ -17,6 +17,7 @@ public class UserRepository : IUserRepository
     }
     public void Save(User user)
     {
+        user.Password = PasswordService.GenerateHash(user.Password);
         _context.Users.Add(user);
         _context.SaveChanges();
     }

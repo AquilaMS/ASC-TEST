@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "JPNaRosHCP2Is/F3VnlCfVNqLJDp4dfQHU6aBiSyImHltN/mxdCzEvdqv4f1pFmkWFcwNeFn6V4D7kVCpRlWsg==",
+  "dgSpecHash": "KchxQRAGe4YiL7EzYXEumMXiAcAhkvNre7+7KQcELyg9wxDIKqakxeynUUzPd7TsFEqlw7CCHQLEFr8SdoSm8g==",
   "success": true,
   "projectFilePath": "C:\\_Meus Projetos\\c#\\asc teste\\ASC-TEST\\ASC-TEST.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Aquila Mazzei\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Aquila Mazzei\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Aquila Mazzei\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Aquila Mazzei\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Aquila Mazzei\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\Aquila Mazzei\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
