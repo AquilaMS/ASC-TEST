@@ -34,4 +34,12 @@ public class TokenService
 
         return claim;
     }
+
+    public string GetIdTokenExpiry(string idtoken)
+{
+  var token = new JwtSecurityToken(jwtEncodedString: idtoken);
+  string expiry = token.Claims.First(c => c.Type == "expiry").Value;
+  return expiry;
+}
+
 }
