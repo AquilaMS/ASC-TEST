@@ -6,6 +6,7 @@ namespace ASC_TEST;
 public interface IUserRepository
 {
     void Save(User user);
+    User FindByEmailAndName(User user);
 }
 public class UserRepository : IUserRepository
 {
@@ -18,5 +19,12 @@ public class UserRepository : IUserRepository
     {
         _context.Users.Add(user);
         _context.SaveChanges();
+    }
+
+    public User FindByEmailAndName(User user)
+    {
+        User foundUser = _context.Users
+            .FirstOrDefault(u => u.Email == user.Email || u.Name == user.Name);
+        return foundUser;
     }
 }
