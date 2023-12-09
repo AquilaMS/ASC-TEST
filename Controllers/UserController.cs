@@ -8,16 +8,18 @@ namespace ASC_TEST.Controllers
     [Route("api/auth")]
     public class UserController : Controller
     {
-        private readonly AppDbContext _context;
-        public UserController(AppDbContext context)
-        {
-            _context = context;
-        }
         [HttpPost]
         public User Create([FromServices] IUserRepository userRepository) {
             User usuario = new() { Email = "email.com", Name = "joao", Password = "123456" };
-           userRepository.Save(usuario);
+            
+            userRepository.Save(usuario);
             return usuario;
+        }
+        [HttpGet]
+        public TokenDTO GetToken(TokenService tokenService) {
+            User usuario = new() { Email = "email.com", Name = "joao", Password = "123456" };
+            TokenDTO token = new TokenDTO(tokenService.Generate(usuario));
+            return token;
         }
     }
 }
