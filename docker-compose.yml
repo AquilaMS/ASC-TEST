@@ -6,6 +6,9 @@ services:
     environment:
       ACCEPT_EULA: "Y"
       SA_PASSWORD: "Ep2uU9ytumP1"
+      SERVER_NAME: "sql-server"
+      TOKEN_HASH: "9b521e8c7da3fe2d6624ed7c9c7401416c62faf24c511916042d761f80d354dd"
+      PWD_HASH: "15"
       MSSQL_PID: Express
     ports:
       - "1433:1433"
@@ -14,3 +17,8 @@ services:
     build: .
     ports:
       - "8090:80"
+
+  frontend:
+    image: aquilams/asctestfrontend
+    ports:
+      - "4200:4200"

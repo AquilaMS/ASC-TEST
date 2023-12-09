@@ -11,7 +11,7 @@ namespace ASC_TEST.Controllers
     {
         [HttpPost]
         [Route("signup")]
-        public SimpleMessageDTO Signup([FromServices] IUserRepository userRepository, [FromBody] SignDTO signup)
+        public SimpleMessageDTO Signup([FromServices] IUserRepository userRepository, [FromBody] SignupDTO signup)
         {
             SimpleMessageDTO simpleMessage = new("");
             User user = new() { Email = signup.Email, Name = signup.Name, Password = signup.Password };
@@ -26,14 +26,14 @@ namespace ASC_TEST.Controllers
             };
             return simpleMessage;
         }
-        [HttpGet]
+        [HttpPost]
         [Route("signin")]
         public TokenDTO Signin([FromServices] IUserRepository userRepository, PasswordService passwordService, TokenService tokenService, [FromBody] SignDTO signin)
         {
-            User user = new() { Email = signin.Email, Name = signin.Name, Password = signin.Password };
+            User user = new() {Name = signin.Name, Password = signin.Password };
             try
             {
-                User gotUser = userRepository.FindByEmailAndName(user);
+                User gotUser = userRepository.FindByName(user);
                 System.Diagnostics.Debug.WriteLine(gotUser);
                 if (gotUser != null && passwordService.DecodeHashPassword(user.Password, gotUser.Password))
                 {

@@ -7,7 +7,7 @@ public interface IUserRepository
 {
     void Save(User user);
     User FindByEmailOrName(User user);
-    User FindByEmailAndName(User user);
+    User FindByName(User user);
 }
 public class UserRepository : IUserRepository
 {
@@ -29,10 +29,10 @@ public class UserRepository : IUserRepository
             .FirstOrDefault(u => u.Email == user.Email || u.Name == user.Name);
         return foundUser;
     }
-    public User FindByEmailAndName(User user)
+    public User FindByName(User user)
     {
         User foundUser = _context.Users
-            .FirstOrDefault(u => u.Email == user.Email && u.Name == user.Name);
+            .FirstOrDefault(u => u.Name == user.Name);
         return foundUser;
     }
 }
