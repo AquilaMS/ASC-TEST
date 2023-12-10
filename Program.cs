@@ -13,7 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    options.UseSqlServer("Server=sql-server, 1433;Initial Catalog=asc;User Id=sa;Password=Ep2uU9ytumP1;TrustServerCertificate=True;Encrypt=false;");
+    string sqlPassword = Environment.GetEnvironmentVariable("SA_PASSWORD");
+    options.UseSqlServer($"Server=sql-server, 1433;Initial Catalog=asc;User Id=sa;Password={sqlPassword};TrustServerCertificate=True;Encrypt=false;");
 });
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<TokenService>();

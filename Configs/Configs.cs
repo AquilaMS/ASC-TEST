@@ -1,7 +1,11 @@
-namespace ASC_TEST;
+using System;
+using System.Text;
 
-public class Configs
+namespace ASC_TEST
 {
-    public static string SecretTokenHash { get; set; } = "9b521e8c7da3fe2d6624ed7c9c7401416c62faf24c511916042d761f80d354dd";
-    public static int SecretPasswordHash { get; set; } = 15;
+    public class Configs
+    {
+        public static string SecretTokenHash { get; } = Environment.GetEnvironmentVariable("TOKEN_HASH");
+        public static int SecretPasswordHash { get; } = Int16.Parse(Environment.GetEnvironmentVariable("PWD_HASH"));
+    }
 }
